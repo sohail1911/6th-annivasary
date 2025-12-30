@@ -6,23 +6,91 @@
     <title>6 Years of Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #b08d8d; --bg: #ffffff; --text: #4a4a4a; --accent: #f7eded; }
-        body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); overflow-x: hidden; }
-        .heart { position: fixed; top: -10%; font-size: 20px; color: var(--primary); user-select: none; z-index: 1000; animation: fall linear forwards; }
-        @keyframes fall { to { transform: translateY(110vh) translateX(20px); opacity: 0; } }
-        header { 
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(255,252,249,0.7), rgba(255,252,249,0.7)), url('chennai.jpg'); /* Using your uploaded photo as BG */
-            background-size: cover; background-position: center; padding: 20px;
+        :root {
+            --primary: #b08d8d;
+            --bg: #fffcf9;
+            --text: #4a4a4a;
+            --accent: #f7eded;
         }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary); margin: 0; }
-        #startBtn { margin-top: 30px; padding: 15px 40px; border: none; background: #b08d8d; color: white; cursor: pointer; font-family: 'Playfair Display'; border-radius: 50px; font-weight: bold; transition: 0.3s; z-index: 10; }
-        .section-container { max-width: 800px; margin: 50px auto; padding: 20px; display: none; opacity: 0; transition: 2s; }
-        .moment-card { background: white; padding: 30px; margin-bottom: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
-        .moment-card img { width: 100%; max-width: 500px; border-radius: 10px; margin: 20px 0; border: 5px solid var(--accent); }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: fixed; top: -10%;
+            font-size: 20px; color: var(--primary);
+            user-select: none; z-index: 1000;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) translateX(20px); opacity: 0; }
+        }
+
+        header {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            /* THE BACKGROUND IMAGE - VISIBLE ON LOAD */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('bg.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            padding: 20px;
+            color: white; /* Make header text white so it shows on the photo */
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; }
+        
+        #startBtn {
+            margin-top: 30px; padding: 15px 40px;
+            border: none; background: white;
+            color: var(--primary); cursor: pointer;
+            font-family: 'Playfair Display'; border-radius: 50px;
+            font-weight: bold; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        #startBtn:hover { background: var(--primary); color: white; }
+
+        /* CONTENT HIDDEN BY DEFAULT */
+        .section-container { 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            display: none; /* Hidden */
+            opacity: 0; 
+            transition: opacity 2s ease-in; 
+        }
+
+        .moment-card {
+            background: white; padding: 30px; margin-bottom: 40px;
+            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center; color: var(--text);
+        }
+
+        .moment-card img {
+            width: 100%; max-width: 500px; border-radius: 10px;
+            margin: 20px 0; border: 5px solid var(--accent);
+        }
+
         .timeline-date { font-weight: bold; color: var(--primary); display: block; margin-bottom: 10px; }
         .quote-text { font-style: italic; font-size: 1.3rem; color: var(--primary); margin: 15px 0; display: block; }
-        .letter-box { background: var(--accent); padding: 40px; border-radius: 5px; font-family: 'Playfair Display', serif; line-height: 1.8; font-size: 1.1rem; border-left: 5px solid var(--primary); }
+
+        .letter-box {
+            background: var(--accent); padding: 40px;
+            border-radius: 5px; font-family: 'Playfair Display', serif;
+            line-height: 1.8; font-size: 1.1rem;
+            border-left: 5px solid var(--primary);
+            color: var(--text);
+        }
+
         footer { text-align: center; padding: 50px; font-size: 0.8rem; opacity: 0.5; }
     </style>
 </head>
@@ -34,24 +102,24 @@
 
     <header id="headerSection">
         <h1>6 Years of Us</h1>
-        <p>From classroom dreams to our forever home.</p>
+        <p style="font-style: italic; font-size: 1.2rem;">From classroom dreams to our forever home.</p>
         <button id="startBtn" onclick="initiate()">Open My Heart ♫</button>
     </header>
 
     <div id="mainContent" class="section-container">
+        
         <div class="moment-card">
             <span class="timeline-date">January 1, 2020</span>
             <h3>The Proposal</h3>
-            <p>I spent that entire day at your home. As I was leaving, I asked you:</p>
+            <p>I spent that entire day at your home—a day I'll never forget. As I was leaving, I asked you that one question that changed our lives forever:</p>
             <span class="quote-text">"Naama en kalyanam pannika kudatu?"</span>
-            <p>Even then, I knew you were the one.</p>
         </div>
 
         <div class="moment-card">
             <span class="timeline-date">June 21, 2024</span>
             <h3>Chennai & The Sleeper Bus</h3>
-            <img src="chennai.jpg" alt="Chennai">
-            <p>That beautiful night on the sleeper bus... an unforgettable memory.</p>
+            <p>That beautiful day in Chennai and that unforgettable night on the sleeper bus.</p>
+            <img src="chennai.jpg" alt="Chennai Memory">
         </div>
 
         <div class="moment-card">
@@ -61,10 +129,13 @@
         </div>
 
         <div class="letter-box">
-            <p>2025 was a year of storms, but my promise for <strong>1/1/2026</strong> is to be your calm. You are my best friend, lover, soulmate, and soon my <strong>pondati</strong>. You are my <strong>Ilakk</strong>—my home.</p>
-            <p style="text-align: right;">— Sohail Khan</p>
+            <p>2025 was a year of storms. I know I made you cry. My promise to you starts on <strong>1/1/2026</strong>: I will be your calm. I will be your peace.</p>
+            <p>You have been my <strong>best friend</strong>, my <strong>lover</strong>, and my <strong>soulmate</strong>. Soon, you are going to be my <strong>pondati</strong>. You are my <strong>Ilakk</strong>. You are my <strong>home</strong>.</p>
+            <p style="text-align: right; margin-top: 20px; font-weight: bold;">— Sohail Khan</p>
         </div>
     </div>
+
+    <footer>Happy 6th Anniversary | 2026</footer>
 
     <script>
         function createHeart() {
@@ -78,12 +149,23 @@
         }
 
         function initiate() {
-            document.getElementById("bgMusic").play();
+            // Play Music
+            const audio = document.getElementById("bgMusic");
+            audio.play();
+
+            // Reveal Content
             const content = document.getElementById("mainContent");
             content.style.display = "block";
             setTimeout(() => { content.style.opacity = "1"; }, 100);
-            document.getElementById("startBtn").style.display = "none";
+
+            // Button Feedback
+            document.getElementById("startBtn").innerHTML = "I Love You";
+            
+            // Start Hearts
             setInterval(createHeart, 300);
+
+            // Scroll down
+            window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
         }
     </script>
 </body>
