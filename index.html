@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Years of Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #b08d8d;
+            --bg: #fffcf9;
+            --text: #4a4a4a;
+            --accent: #f7eded;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: fixed; top: -10%;
+            font-size: 20px; color: var(--primary);
+            user-select: none; z-index: 1000;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) translateX(20px); opacity: 0; }
+        }
+
+        header {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,252,249,0.5), rgba(255,252,249,0.5)), 
+                        url('https://drive.google.com/uc?export=view&id=1SG2CsPmtpwSTP9rB_egzjRSwPTIskh47');
+            background-size: cover; background-position: center;
+            padding: 20px;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary); margin: 0; }
+        
+        #startBtn {
+            margin-top: 30px; padding: 15px 40px;
+            border: 2px solid var(--primary); background: white;
+            color: var(--primary); cursor: pointer;
+            font-family: 'Playfair Display'; border-radius: 50px;
+            font-weight: bold; transition: 0.3s;
+        }
+
+        .section-container { max-width: 800px; margin: 50px auto; padding: 20px; opacity: 0; transition: 2s; }
+
+        .moment-card {
+            background: white; padding: 30px; margin-bottom: 40px;
+            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .moment-card img {
+            width: 100%; max-width: 500px; border-radius: 10px;
+            margin: 20px 0; border: 5px solid var(--accent);
+        }
+
+        .timeline-date { font-weight: bold; color: var(--primary); display: block; margin-bottom: 10px; }
+
+        .quote-text { font-style: italic; font-size: 1.3rem; color: var(--primary); margin: 15px 0; display: block; }
+
+        .letter-box {
+            background: var(--accent); padding: 40px;
+            border-radius: 5px; font-family: 'Playfair Display', serif;
+            line-height: 1.8; font-size: 1.1rem;
+            border-left: 5px solid var(--primary);
+        }
+
+        footer { text-align: center; padding: 50px; font-size: 0.8rem; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="https://drive.google.com/uc?export=view&id=1hF2--DoxwGuE0dGYJQ5kFaGwPCTrmdK1" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <h1>6 Years of Us</h1>
+        <p>From classroom dreams to our forever home.</p>
+        <button id="startBtn" onclick="initiate()">Open My Heart ♫</button>
+    </header>
+
+    <div id="mainContent" class="section-container">
+        
+        <div class="moment-card">
+            <span class="timeline-date">January 1, 2020</span>
+            <h3>The Proposal</h3>
+            <p>I spent that entire day at your home—a day I'll never forget. As I was leaving, I asked you that one question that changed our lives forever:</p>
+            <span class="quote-text">"Naama en kalyanam pannika kudatu?"</span>
+            <p>We were just in the last 3 months of 12th standard, but even then, I knew.</p>
+        </div>
+
+        <div class="moment-card">
+            <span class="timeline-date">2020 - 2023</span>
+            <h3>The Distance & The Strength</h3>
+            <p>Then the pandemic hit. We couldn't meet, and the mental pressure at home was heavy. Talking to you was my only relief—you saved me. Even through different colleges and the rare sightings, we fought to stay close.</p>
+        </div>
+
+        <div class="moment-card">
+            <span class="timeline-date">June 21, 2024</span>
+            <h3>The Sleeper Bus Memory</h3>
+            <p>That beautiful day in Chennai and that unforgettable night on the sleeper bus. Just you and me, heading home, making memories that would last a lifetime.</p>
+            <img src="https://drive.google.com/uc?export=view&id=1ib-LtMYfmAh5A4D0DXzUbL8Ihr94asob" alt="Chennai Memory">
+        </div>
+
+        <div class="moment-card">
+            <span class="timeline-date">August 10, 2025</span>
+            <h3>Our First Date</h3>
+            <p>The reward for all those years of waiting. Finally, a date that belonged only to us.</p>
+            <img src="https://drive.google.com/uc?export=view&id=1U8en-IU8duZlSzP0B1vgToAXyXbk4VJP" alt="First Date">
+        </div>
+
+        <div class="letter-box">
+            <p>2025 was a year of storms. I know I made you cry and I know I hurt you. It breaks my heart because you have been my everything. My promise to you starts on <strong>1/1/2026</strong>: I will be calm. I will be your peace. I will never hurt you again.</p>
+            <hr style="border: 0; border-top: 1px solid var(--primary); margin: 20px 0;">
+            <p>You have been my <strong>best friend</strong>, my <strong>lover</strong>, and my <strong>soulmate</strong>. Soon, you are going to be my <strong>pondati</strong>. You are my <strong>Ilakk</strong>. You aren't just a person to me; you are my <strong>home</strong> and I am <strong>yours</strong> too. Working beside you now is a dream come true.</p> Lets get married soon, do all the things we shared and start to live <strong>together</strong>.
+            <p style="text-align: right;">— Sohail Khan</p>
+        </div>
+
+    </div>
+
+    <footer>Happy 6th Anniversary | 01-01-2026 Reset</footer>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+
+        function initiate() {
+            document.getElementById("bgMusic").play();
+            document.getElementById("mainContent").style.opacity = "1";
+            document.getElementById("startBtn").innerHTML = "I Love You";
+            setInterval(createHeart, 300);
+            window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
